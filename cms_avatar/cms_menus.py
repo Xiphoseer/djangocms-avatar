@@ -10,9 +10,9 @@ class AvatarMenu(CMSAttachMenu):
 
     def get_nodes(self, request):
         nodes = []
-        n1 = NavigationNode(_('Add'), reverse('avatar:avatar_add'),1)
-        n2 = NavigationNode(_('Change'), reverse('avatar:avatar_change'),2)
-        n3 = NavigationNode(_('Delete'), reverse('avatar:avatar_delete'),3)
+        n1 = NavigationNode(_('Add'), reverse('avatar:avatar_add'),1, attr={'visible_for_anonymous': False})
+        n2 = NavigationNode(_('Change'), reverse('avatar:avatar_change'),2, attr={'visible_for_anonymous': False})
+        n3 = NavigationNode(_('Delete'), reverse('avatar:avatar_delete'),3, attr={'visible_for_anonymous': False})
         nodes += [n1,n2,n3]
         return nodes
 
